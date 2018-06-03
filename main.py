@@ -3,7 +3,7 @@ import asyncio
 import random
 import secreto
 
-TOKEN =  process.env.token()
+TOKEN =  secreto.seu_token()
 msg_id = None
 msg_user = None
 
