@@ -10,7 +10,7 @@ msg_user = None
 from discord import Client
 
 client: Client = discord.Client()
-
+COR = 0xFF00FF
 
 @client.event
 async def on_ready():
@@ -75,7 +75,25 @@ async def on_message(message):
         await client.send_message(message.channel, "**Oiee >.<**")
 
     if message.content.lower().startswith('tururu'):
-        await client.send_message(message.channel, "**Tururu**https://www.youtube.com/watch?v=vh_EFU138j0")
+        await client.send_message(message.channel, "**Tururu** https://www.youtube.com/watch?v=vh_EFU138j0")
+	
+# ===================================================
+# Respostas por Embed | Imagens
+# ===================================================
+
+    if message.content.lower().startswith('kawaii help'):  # PREFIX DO COMANDO (Deste, no caso) Não escrever em Maiúsculo.
+        fazer = discord.Embed(
+            title="**Aqui estar os meus comando! >u<**",
+            color=COR,
+	    description="**COMANDOS**\n"
+	            "- bom dia, boa tarde e boa noite \n"
+                    "- oi, tururu \n"
+                    "- blood, kawaii \n" 
+                    "- $ajuda",)
+
+        botmsg = await client.send_message(message.channel, embed=fazer)
+
+        await client.send_message(message.channel, ">.<")	
 	
 
 
